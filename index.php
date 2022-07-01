@@ -1,3 +1,3 @@
 <?php
-echo '<?php echo 'system('cat index.php');'; ?>';
+echo '<?php echo system("cat index.php"); ?>';
 ?>
